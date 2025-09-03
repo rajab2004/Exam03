@@ -1,0 +1,12 @@
+class Time:
+    def __init__(self, hour, minute):
+        self.hour = hour
+        self.minute = minute
+    def __lt__(self, other):  
+        return (self.hour, self.minute) < (other.hour, other.minute)
+    def __repr__(self):
+        return f"Time({self.hour}, {self.minute})"
+t1 = Time(10, 30)
+t2 = Time(12, 15)
+print(t1 < t2)   
+ 

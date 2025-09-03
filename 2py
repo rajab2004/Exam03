@@ -1,0 +1,9 @@
+class Student :
+    def __init__(self, ism, yosh, kursi):
+        self.ism = ism 
+        self.yosh = yosh  
+        self.kursi = kursi
+    def introduce(self):
+        return f"My name is {self.ism}, I am {self.yosh} years old, studying in  {self.kursi}nd course."
+talaba = Student("Ali", "20", 2)
+print(talaba.introduce())

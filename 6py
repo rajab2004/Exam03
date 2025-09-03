@@ -1,0 +1,19 @@
+class BankAccount:
+    def __init__(self, balance):
+        self.__balance = balance  
+    def deposit(self, amount):
+        if amount > 0:
+            self.__balance += amount
+        else:
+            print("Summani to'g'ri kiriting!")
+    def withdraw(self, amount):
+        if 0 < amount <= self.__balance:
+            self.__balance -= amount
+        else:
+            print("Yetarli mablag' yo'q yoki noto'g'ri summa!")
+    def get_balance(self):
+        return self.__balance
+acc = BankAccount(100)
+acc.deposit(50)
+acc.withdraw(30)
+print(acc.get_balance()) 

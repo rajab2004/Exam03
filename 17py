@@ -1,0 +1,15 @@
+class Session:
+    def __init__(self):
+        self.user = None
+    def login(self, username):
+        self.user = username
+        print(f"{self.user} logged in")
+    def logout(self):
+        if self.user:
+            print(f"{self.user} logged out")
+            self.user = None
+        else:
+            print("No user logged in")
+s = Session()
+s.login("Ali")
+s.logout()

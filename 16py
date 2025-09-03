@@ -1,0 +1,26 @@
+class Account:
+    def __init__(self, balance):
+        self.balance = balance
+    def deposit(self, amount):
+        if amount > 0:
+            self.balance += amount
+        else:
+            print("Summani to'g'ri kiriting!")
+    def withdraw(self, amount):
+        if 0 < amount <= self.balance:
+            self.balance -= amount
+        else:
+            print("Yetarli mablag' yo'q yoki noto'g'ri summa!")
+    def get_balance(self):
+        return self.balance
+class SavingsAccount(Account):
+    def __init__(self, balance, interest_rate):
+        super().__init__(balance)
+        self.interest_rate = interest_rate
+    def calculate_interest(self):
+        return self.balance * self.interest_rate
+class CheckingAccount(Account):
+    pass
+s = SavingsAccount(1000, 0.05)
+s.deposit(500)
+print(s.calculate_interest())
